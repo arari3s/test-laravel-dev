@@ -58,14 +58,27 @@
                     </svg>
                 </nav>
 
-                <div class="hidden items-center justify-end lg:flex">
-                    <button class="btn-no-fill text-sm font-medium py-3 px-8 focus:outline-none">
-                        Sign In
-                    </button>
-                    <button class="btn-fill text-white font-medium text-sm py-3 px-6 rounded-full focus:outline-none">
-                        Register
-                    </button>
-                </div>
+                @if (Route::has('login'))
+                    {{-- <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10"> --}}
+                    <div class="hidden items-center justify-end lg:flex">
+                        @auth
+                            <a href="{{ url('/dashboard') }}"
+                                class="btn-fill text-white font-medium text-sm py-3 px-6 rounded-full focus:outline-none">
+                                Dashboard
+                            </a>
+                        @else
+                            <a href="{{ route('login') }}"
+                                class="btn-no-fill text-sm font-medium py-3 px-8 focus:outline-none">Log in</a>
+
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}"
+                                    class="btn-fill text-white font-medium text-sm py-3 px-6 rounded-full focus:outline-none">
+                                    Register
+                                </a>
+                            @endif
+                        @endauth
+                    </div>
+                @endif
             </header>
 
             <div class="lg:px-24 md:px-16 sm:px-8 px-8">
@@ -74,7 +87,7 @@
 
             <!-- Hero -->
             <div>
-                <div class="mx-auto flex pt-16 pb-16 lg:pb-20 lg:px-24 md:px-16 sm:px-8 px-8 lg:flex-row flex-col">
+                <div class="mx-auto flex pt-32 pb-16 lg:pb-20 lg:px-24 md:px-16 sm:px-8 px-8 lg:flex-row flex-col">
                     <!-- Left Column -->
                     <div
                         class="lg:flex-grow lg:w-1/2 flex flex-col lg:items-start lg:text-left mb-3 md:mb-12 lg:mb-0 items-center text-center">
