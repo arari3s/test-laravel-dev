@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Frontend\LandingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [LandingController::class, 'index'])->name('index');
 
 Route::middleware([
     'auth:sanctum',
