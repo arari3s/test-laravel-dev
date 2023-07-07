@@ -420,7 +420,8 @@
                         <div
                             class="absolute transition duration-700 ease-out opacity-0 hover:opacity-100 icon-placeholder">
                             <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-House/taxes-color.svg"
-                                alt="house" class="color" width="76" /> </div>
+                                alt="house" class="color" width="76" />
+                        </div>
                         <div> <img class="non-color" width="76"
                                 src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-House/taxes.svg"
                                 alt="house" /> </div>
@@ -434,7 +435,8 @@
                         <div
                             class="absolute transition duration-700 ease-out opacity-0 hover:opacity-100 icon-placeholder">
                             <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-House/user-color.svg"
-                                alt="house" class="color" /> </div>
+                                alt="house" class="color" />
+                        </div>
                         <div> <img class="non-color"
                                 src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-House/user.svg"
                                 alt="house" /> </div>
@@ -448,7 +450,8 @@
                         <div
                             class="absolute transition duration-700 ease-out opacity-0 hover:opacity-100 icon-placeholder">
                             <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-House/discount-color.svg"
-                                alt="house" class="color" /> </div>
+                                alt="house" class="color" />
+                        </div>
                         <div> <img class="non-color"
                                 src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-House/discount.svg"
                                 alt="house" /> </div>
@@ -462,7 +465,8 @@
                         <div
                             class="absolute transition duration-700 ease-out opacity-0 hover:opacity-100 icon-placeholder">
                             <img src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-House/calendar-color.svg"
-                                alt="house" class="color" width="62" /> </div>
+                                alt="house" class="color" width="62" />
+                        </div>
                         <div> <img class="non-color" width="62"
                                 src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-House/calendar.svg"
                                 alt="house" /> </div>
@@ -681,7 +685,8 @@
                     <path
                         d="M0.0576172 0.0826446C0.718774 2.72727 3.03282 5.3719 6.09067 6.03306H15.5122L16.008 6.19835V29.9174H21.8758V6.19835L22.3717 6.03306H31.7932C34.9336 5.20661 37.1651 2.72727 37.8262 0.0826446V0L0.0576172 0.0826446Z"
                         fill="#627492" />
-                </svg> </div>
+                </svg>
+            </div>
         </main>
     </section><!-- START: PRODUCTS -->
     <section class="products bg-black-1">
