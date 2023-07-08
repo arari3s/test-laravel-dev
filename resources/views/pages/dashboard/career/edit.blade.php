@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Category &raquo; {{ $category->name }} &raquo; Edit
+            Category &raquo; {{ $career->name }} &raquo; Edit
         </h2>
     </x-slot>
 
@@ -26,7 +26,7 @@
                     </div>
                 @endif
 
-                <form action="{{ route('dashboard.category.update', $category->id) }}" class="w-full" method="POST"
+                <form action="{{ route('dashboard.career.update', $career->id) }}" class="w-full" method="POST"
                     enctype="multipart/form-data">
                     @method('PUT')
                     @csrf
@@ -35,9 +35,9 @@
                         <div class="w-full px-3 mb-6">
                             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Name
                                 <span class="text-red-500">*</span></label>
-                            <input value="{{ old('name') ?? $category->name }}" name="name"
+                            <input value="{{ old('name') ?? $career->name }}" name="name"
                                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                placeholder="Category Name" type="text">
+                                placeholder="Career Name" type="text">
                         </div>
 
                         <div class="w-full px-3 mb-6">
@@ -46,7 +46,7 @@
                                 <span class="text-red-500">*</span></label>
                             <textarea name="description"
                                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                cols="30" rows="10">{!! old('description') ?? $category->description !!}</textarea>
+                                cols="30" rows="10">{!! old('description') ?? $career->description !!}</textarea>
                         </div>
                     </div>
 
@@ -54,9 +54,9 @@
                         <div class="w-full px-3">
                             <button type="submit"
                                 class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-10 rounded-md shadow-lg">Update
-                                Category</button>
+                                Career</button>
 
-                            <a href="{{ route('dashboard.category.index') }}"
+                            <a href="{{ route('dashboard.career.index') }}"
                                 class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-10 ml-3 rounded-md shadow-lg">
                                 Cancel
                             </a>

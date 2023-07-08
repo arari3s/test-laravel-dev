@@ -83,17 +83,21 @@ class CareerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Career $career)
     {
-        //
+        return view('pages.dashboard.career.edit', compact('career'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(CareerRequest $request, Career $career)
     {
-        //
+        $data = $request->all();
+
+        $career->update($data);
+
+        return redirect()->route('dashboard.career.index');
     }
 
     /**
