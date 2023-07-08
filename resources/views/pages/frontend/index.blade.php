@@ -813,66 +813,24 @@
                 </div>
 
                 <div class="grid items-center justify-center h-full md:grid-cols-12 gap-4">
-                    <div class="h-full md:col-span-12 lg:col-span-6">
-                        <a href="#"
-                            class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-full hover:bg-gray-100 ">
-                            <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
-                                src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3280&q=80"
-                                alt="">
-                            <div class="flex flex-col justify-between p-4 leading-normal">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Marketing
-                                    Comunication</h5>
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Ayo nikmati beragam fitur yang
-                                    dapat memberikan kemudahan untuk tokomu, dan mulai mengembangkan bisnis toko online
-                                    bersama.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="h-full md:col-span-12 lg:col-span-6">
-                        <a href="#"
-                            class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-full hover:bg-gray-100 ">
-                            <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
-                                src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3280&q=80"
-                                alt="">
-                            <div class="flex flex-col justify-between p-4 leading-normal">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Marketing
-                                    Comunication</h5>
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Ayo nikmati beragam fitur yang
-                                    dapat memberikan kemudahan untuk tokomu, dan mulai mengembangkan bisnis toko online
-                                    bersama.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="h-full md:col-span-12 lg:col-span-6">
-                        <a href="#"
-                            class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-full hover:bg-gray-100 ">
-                            <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
-                                src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3280&q=80"
-                                alt="">
-                            <div class="flex flex-col justify-between p-4 leading-normal">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Marketing
-                                    Comunication</h5>
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Ayo nikmati beragam fitur yang
-                                    dapat memberikan kemudahan untuk tokomu, dan mulai mengembangkan bisnis toko online
-                                    bersama.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="h-full md:col-span-12 lg:col-span-6">
-                        <a href="#"
-                            class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-full hover:bg-gray-100 ">
-                            <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
-                                src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3280&q=80"
-                                alt="">
-                            <div class="flex flex-col justify-between p-4 leading-normal">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Marketing
-                                    Comunication</h5>
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Ayo nikmati beragam fitur yang
-                                    dapat memberikan kemudahan untuk tokomu, dan mulai mengembangkan bisnis toko online
-                                    bersama.</p>
-                            </div>
-                        </a>
-                    </div>
+                    @foreach ($careers as $career)
+                        <div class="h-full md:col-span-12 lg:col-span-6">
+                            <a href="#"
+                                class="flex flex-col items-center bg-white rounded-lg md:flex-row md:max-w-full hover:bg-gray-100 ">
+                                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                                    src="https://images.pexels.com/photos/6205759/pexels-photo-6205759.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                                    alt="">
+                                <div class="flex flex-col justify-between p-4 leading-normal">
+                                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                        {{ $career->name }}
+                                    </h5>
+                                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                                        {!! $career->description !!}
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>

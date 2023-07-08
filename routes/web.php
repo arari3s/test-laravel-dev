@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\CareerController;
 use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Frontend\LandingController;
@@ -27,9 +28,6 @@ Route::middleware(['auth:sanctum', 'verified'])
 
         Route::middleware(['admin'])->group(function () {
             Route::resource('category', CategoryController::class);
-            // Route::resource('product.gallery', ProductGalleryController::class)->shallow();
-            // Route::resource('transaction', TransactionController::class);
-            // Route::resource('transaction', TransactionController::class);
-            // Route::resource('user', UserController::class);
+            Route::resource('career', CareerController::class);
         });
     });

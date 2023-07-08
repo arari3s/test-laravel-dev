@@ -16,9 +16,15 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
-                    <x-nav-link href="{{ route('dashboard.category.index') }}" :active="request()->routeIs('dashboard.category.index')">
-                        {{ __('Category') }}
-                    </x-nav-link>
+                    @if (Auth::user()->roles == 'ADMIN')
+                        <x-nav-link href="{{ route('dashboard.category.index') }}" :active="request()->routeIs('dashboard.category.index')">
+                            {{ __('Category') }}
+                        </x-nav-link>
+
+                        <x-nav-link href="{{ route('dashboard.career.index') }}" :active="request()->routeIs('dashboard.career.index')">
+                            {{ __('Career') }}
+                        </x-nav-link>
+                    @endif
                 </div>
             </div>
 
