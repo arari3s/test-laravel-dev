@@ -36,19 +36,31 @@
                             alt="" />
                     </a>
                     <a href="#"
-                        class="text-sm text-black-1 font-medium mx-0 lg:mx-5 my-4 lg:my-0 relative active">Beranda</a>
-                    <a href="#" class="text-sm text-gray-1 font-light mx-0 lg:mx-5 my-4 lg:my-0 relative">Tentang
+                        class="text-sm text-gray-800 font-medium mx-0 lg:mx-5 my-4 lg:my-0 relative active">Beranda</a>
+                    <a href="#" class="text-sm text-gray-500 font-light mx-0 lg:mx-5 my-4 lg:my-0 relative">Tentang
                         GAS</a>
-                    <a href="#" class="text-sm text-gray-1 font-light mx-0 lg:mx-5 my-4 lg:my-0 relative">Fitur</a>
-                    <a href="#" class="text-sm text-gray-1 font-light mx-0 lg:mx-5 my-4 lg:my-0 relative">Daftar</a>
-                    <a href="#" class="text-sm text-gray-1 font-light mx-0 lg:mx-5 my-4 lg:my-0 relative">Karir</a>
+                    <a href="#" class="text-sm text-gray-500 font-light mx-0 lg:mx-5 my-4 lg:my-0 relative">Fitur</a>
+                    <a href="#" class="text-sm text-gray-500 font-light mx-0 lg:mx-5 my-4 lg:my-0 relative">Daftar</a>
+                    <a href="#" class="text-sm text-gray-500 font-light mx-0 lg:mx-5 my-4 lg:my-0 relative">Karir</a>
                     <div class="flex items-center justify-end w-full lg:hidden mt-3">
-                        <button class="btn-no-fill text-sm font-medium py-3 px-8 focus:outline-none">
-                            Sign In
-                        </button>
-                        <button class="btn-fill text-sm text-white font-medium py-3 px-8 rounded-full focus:outline-none">
-                            Register
-                        </button>
+                        @if (Route::has('login'))
+                            @auth
+                                <a href="{{ url('/dashboard') }}"
+                                    class="btn-fill text-white font-medium text-sm py-3 px-6 rounded-full focus:outline-none">
+                                    Dashboard
+                                </a>
+                            @else
+                                <a href="{{ route('login') }}"
+                                    class="btn-no-fill text-sm font-medium py-3 px-8 focus:outline-none">Log in</a>
+
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}"
+                                        class="btn-fill text-sm text-white font-medium py-3 px-8 rounded-full focus:outline-none">
+                                        Register
+                                    </a>
+                                @endif
+                            @endauth
+                        @endif
                     </div>
 
                     <svg @click="open = !open" class="w-6 h-6 absolute top-4 right-4 cursor-pointer lg:hidden"
@@ -91,12 +103,12 @@
                     <!-- Left Column -->
                     <div
                         class="lg:flex-grow lg:w-1/2 flex flex-col lg:items-start lg:text-left mb-3 md:mb-12 lg:mb-0 items-center text-center">
-                        <h1 class="text-black-1 title-font sm:text-5xl lg:text-6xl text-4xl mb-5 font-semibold"
+                        <h1 class="text-gray-800 title-font sm:text-5xl lg:text-6xl text-4xl mb-5 font-semibold"
                             style="line-height: 1.25">
                             Bergabung<br class="lg:block hidden" /> dengan
                             <span style="color: #FFCA04"> GAS</span>
                         </h1>
-                        <p class="text-base text-gray-400 leading-6 tracking-wide mb-12 lg:mb-20">
+                        <p class="text-base text-gray-800 leading-6 tracking-wide mb-12 lg:mb-20">
                             Aplikasi Gas akan membantumu dalam memantau stok
                             <br class="sm:block hidden" />
                             produk tokomu dan menjangkau customer yang lebih luas
@@ -183,8 +195,8 @@
     <section class="value bg-yellow-500 bg-opacity-5 py-24">
         <div class="max-w-screen-2xl px-4 lg:px-24 mx-auto content" style="font-family: 'Poppins', sans-serif">
             <div class="text-center section-heading mb-20">
-                <div class="mb-3 text-4xl font-bold leading-relaxed text-black lg:text-6xl">Popular Fitur</div>
-                <div class="text-lg font-medium text-gray-400">Nikmati berbagai fitur menarik yang kami berikan</div>
+                <div class="mb-3 text-4xl font-bold leading-relaxed text-gray-800 lg:text-6xl">Popular Fitur</div>
+                <div class="text-lg font-light text-gray-800">Nikmati berbagai fitur menarik yang kami berikan</div>
             </div>
 
             <div class="grid items-center justify-center h-full md:grid-cols-6">
@@ -635,12 +647,12 @@
     <section class="value py-24" style="background-color: #fafcff">
         <div class="max-w-screen-2xl px-4 lg:px-24 mx-auto content" style="font-family: 'Poppins', sans-serif">
             <div class="text-center section-heading mb-20">
-                <div class="mb-3 text-4xl font-bold leading-relaxed text-black lg:text-6xl">Kategori Toko</div>
-                <div class="text-lg font-medium text-gray-400">Apapun jenis tokomu dapat bergabung bersama GAS</div>
+                <div class="mb-3 text-4xl font-bold leading-relaxed text-gray-800 lg:text-6xl">Kategori Toko</div>
+                <div class="text-lg font-light text-gray-800">Apapun jenis tokomu dapat bergabung bersama GAS</div>
             </div>
 
             <div class="grid items-center justify-center h-full md:grid-cols-12 gap-4">
-                <div class="h-full md:col-span-4 lg:col-span-3">
+                <div class="h-full md:col-span-6 lg:col-span-3">
                     <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
                         <a href="#">
                             <img class="rounded-t-lg"
@@ -659,7 +671,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="h-full md:col-span-4 lg:col-span-3">
+                <div class="h-full md:col-span-6 lg:col-span-3">
                     <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
                         <a href="#">
                             <img class="rounded-t-lg"
@@ -678,7 +690,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="h-full md:col-span-4 lg:col-span-3">
+                <div class="h-full md:col-span-6 lg:col-span-3">
                     <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
                         <a href="#">
                             <img class="rounded-t-lg"
@@ -697,7 +709,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="h-full md:col-span-4 lg:col-span-3">
+                <div class="h-full md:col-span-6 lg:col-span-3">
                     <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
                         <a href="#">
                             <img class="rounded-t-lg"
@@ -853,6 +865,69 @@
                         <br class="lg:block hidden" />
                         Jadikan bagian dari kami dan kembangkan bakat, ide kreatifmu dalam GAS.
                     </h2>
+                </div>
+
+                <div class="grid items-center justify-center h-full md:grid-cols-12 gap-4">
+                    <div class="h-full md:col-span-12 lg:col-span-6">
+                        <a href="#"
+                            class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-full hover:bg-gray-100 ">
+                            <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                                src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3280&q=80"
+                                alt="">
+                            <div class="flex flex-col justify-between p-4 leading-normal">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Marketing
+                                    Comunication</h5>
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Ayo nikmati beragam fitur yang
+                                    dapat memberikan kemudahan untuk tokomu, dan mulai mengembangkan bisnis toko online
+                                    bersama.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="h-full md:col-span-12 lg:col-span-6">
+                        <a href="#"
+                            class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-full hover:bg-gray-100 ">
+                            <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                                src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3280&q=80"
+                                alt="">
+                            <div class="flex flex-col justify-between p-4 leading-normal">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Marketing
+                                    Comunication</h5>
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Ayo nikmati beragam fitur yang
+                                    dapat memberikan kemudahan untuk tokomu, dan mulai mengembangkan bisnis toko online
+                                    bersama.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="h-full md:col-span-12 lg:col-span-6">
+                        <a href="#"
+                            class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-full hover:bg-gray-100 ">
+                            <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                                src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3280&q=80"
+                                alt="">
+                            <div class="flex flex-col justify-between p-4 leading-normal">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Marketing
+                                    Comunication</h5>
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Ayo nikmati beragam fitur yang
+                                    dapat memberikan kemudahan untuk tokomu, dan mulai mengembangkan bisnis toko online
+                                    bersama.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="h-full md:col-span-12 lg:col-span-6">
+                        <a href="#"
+                            class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-full hover:bg-gray-100 ">
+                            <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                                src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3280&q=80"
+                                alt="">
+                            <div class="flex flex-col justify-between p-4 leading-normal">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Marketing
+                                    Comunication</h5>
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Ayo nikmati beragam fitur yang
+                                    dapat memberikan kemudahan untuk tokomu, dan mulai mengembangkan bisnis toko online
+                                    bersama.</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
