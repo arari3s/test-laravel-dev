@@ -20,7 +20,7 @@ php artisan key:generate
 ```
 
 ```bash
-Log in with the below users
+#Log in with the below users
 
 Username: superadmin@laravel.test
 Password: superadmin
