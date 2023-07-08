@@ -652,83 +652,28 @@
             </div>
 
             <div class="grid items-center justify-center h-full md:grid-cols-12 gap-4">
-                <div class="h-full md:col-span-6 lg:col-span-3">
-                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-                        <a href="#">
-                            <img class="rounded-t-lg"
-                                src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3270&q=80"
-                                alt="" />
-                        </a>
-                        <div class="p-5">
+                @foreach ($categories as $category)
+                    <div class="h-full md:col-span-6 lg:col-span-3">
+                        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
                             <a href="#">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                    Toko Kelontong
-                                </h5>
+                                <img class="rounded-t-lg"
+                                    src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3270&q=80"
+                                    alt="" />
                             </a>
-                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, placeat!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="h-full md:col-span-6 lg:col-span-3">
-                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-                        <a href="#">
-                            <img class="rounded-t-lg"
-                                src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3270&q=80"
-                                alt="" />
-                        </a>
-                        <div class="p-5">
-                            <a href="#">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                    Toko Kelontong
-                                </h5>
-                            </a>
-                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, placeat!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="h-full md:col-span-6 lg:col-span-3">
-                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-                        <a href="#">
-                            <img class="rounded-t-lg"
-                                src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3270&q=80"
-                                alt="" />
-                        </a>
-                        <div class="p-5">
-                            <a href="#">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                    Toko Kelontong
-                                </h5>
-                            </a>
-                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, placeat!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="h-full md:col-span-6 lg:col-span-3">
-                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-                        <a href="#">
-                            <img class="rounded-t-lg"
-                                src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3270&q=80"
-                                alt="" />
-                        </a>
-                        <div class="p-5">
-                            <a href="#">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                    Toko Kelontong
-                                </h5>
-                            </a>
-                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, placeat!
-                            </p>
-                        </div>
-                    </div>
 
-                </div>
+                            <div class="p-5">
+                                <a href="#">
+                                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                        {{ $category->name }}
+                                    </h5>
+                                </a>
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                                    {!! $category->description !!}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
