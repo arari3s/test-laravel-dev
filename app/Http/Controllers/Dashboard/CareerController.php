@@ -103,8 +103,10 @@ class CareerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Career $career)
     {
-        //
+        $career->delete();
+
+        return redirect()->route('dashboard.career.index');
     }
 }
